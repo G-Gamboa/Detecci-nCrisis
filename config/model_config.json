@@ -1,0 +1,8 @@
+{
+  "text_model": {
+    "provider": "huggingface-local",
+    "name": "bert-suicide-model",
+    "num_labels": 2,
+    "labels": ["non-suicide", "suicide"]
+  }
+}

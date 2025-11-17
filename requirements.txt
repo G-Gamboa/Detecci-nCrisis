@@ -1,0 +1,16 @@
+torch
+transformers
+librosa
+soundfile
+numpy
+pandas
+pydub
+twilio
+streamlit
+onnxruntime
+python-dotenv
+pyyaml
+fastapi
+uvicorn
+openai-whisper
+ffmpeg-python

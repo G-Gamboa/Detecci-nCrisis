@@ -1,0 +1,21 @@
+app:
+  name: "Sistema de Detección de Crisis Emocionales"
+  version: "2.0.0-BERT"
+  debug: true
+
+risk_thresholds:
+  high: 0.80
+  medium: 0.50
+
+alerts:
+  enabled: false
+  channel: "twilio"
+  send_on_high: true
+  send_on_medium: false
+
+audio:
+  sample_rate: 16000
+  chunk_seconds: 5
+
+storage:
+  base_path: "./data"

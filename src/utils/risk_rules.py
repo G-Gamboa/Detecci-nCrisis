@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 
 
 @dataclass
@@ -9,7 +9,7 @@ class RiskResult:
     final_risk: float
     risk_label: str
     text: str = ""
-    extra: Dict[str, Any] | None = None
+    extra: Optional[Dict[str, Any]] = None
 
 
 def combine_risk(text_risk: float, audio_risk: float) -> float:

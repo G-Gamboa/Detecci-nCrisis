@@ -129,8 +129,7 @@ def main():
             unsafe_allow_html=True,
         )
 
-        # Texto (transcripción simulada)
-        st.markdown("### Transcripción estimada")
+        st.markdown("### Transcripción")
         st.write(result.text)
 
         # Features de audio

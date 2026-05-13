@@ -1,7 +1,10 @@
+import logging
 import os
 from typing import Optional
 
 from twilio.rest import Client
+
+logger = logging.getLogger(__name__)
 
 
 class AlertService:
@@ -25,16 +28,19 @@ class AlertService:
     def send_high_risk_alert(self, final_risk: float, transcript: str) -> None:
         client = self._get_client()
         if client is None or not self.supervisor_number or not self.from_number:
-            print("AlertService: configuración incompleta o desactivada. Alerta no enviada.")
+            logger.warning("AlertService: configuración incompleta o desactivada. Alerta no enviada.")
             return
         message_body = (
             "Alerta de alto riesgo detectada en llamada (BERT).\n"
             f"Score: {final_risk:.3f}\n"
             f"Extracto: {transcript[:200]}..."
         )
-        client.messages.create(
-            body=message_body,
-            from_=self.from_number,
-            to=self.supervisor_number,
-        )
-        print("Alerta de alto riesgo enviada a supervisor.")
+        try:
+            client.messages.create(
+                body=message_body,
+                from_=self.from_number,
+                to=self.supervisor_number,
+            )
+            logger.info("Alerta de alto riesgo enviada a supervisor.")
+        except Exception:
+            logger.exception("Error al enviar alerta SMS via Twilio.")

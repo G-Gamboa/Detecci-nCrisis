@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Variables de entorno (nunca subir credenciales)
+.env
+
+# Datos y audios de prueba
+data/samples/
+*.wav
+*.mp3
+*.ogg
+*.flac
+
+# Pesos del modelo descargados (binarios grandes)
+models/bert-suicide-model/*.bin
+models/bert-suicide-model/*.safetensors
+models/bert-suicide-model/*.pt
+
+# Whisper cache
+~/.cache/whisper/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

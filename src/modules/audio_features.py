@@ -1,7 +1,5 @@
 from typing import Dict
 
-from utils.audio_utils import extract_basic_features
-
 
 class AudioRiskEstimator:
     def __init__(self) -> None:
